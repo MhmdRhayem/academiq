@@ -1,0 +1,5 @@
+outs:
+- md5: fa4420007171f95270aa0731c6d87a46
+  size: 672746
+  hash: md5
+  path: cleaned_data.xlsx

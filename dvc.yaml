@@ -1,0 +1,25 @@
+stages:
+  prepare_data:
+    cmd: python scripts/prepare_data.py
+    deps:
+      - data/cleaned_data.xlsx
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    cmd: python scripts/train.py
+    deps:
+      - data/processed/train.csv
+      - scripts/train.py
+    params:
+      - train.n_estimators
+      - train.max_depth
+      - train.learning_rate
+    outs:
+      - models/best_model.pkl
+      - models/feature_columns.pkl
+      - models/target_columns.pkl
+    metrics:
+      - models/metrics.json:
+          cache: false

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/models/best_model.pkl
+      - FEATURE_COLUMNS_PATH=/app/models/feature_columns.pkl
+      - TARGET_COLUMNS_PATH=/app/models/target_columns.pkl
+      - METADATA_PATH=/app/models/model_metadata.json
+    volumes:
+      - ./models:/app/models:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

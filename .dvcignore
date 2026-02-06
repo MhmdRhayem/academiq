@@ -1,0 +1,8 @@
+# DVC ignore file
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git/
+.idea/
+.vscode/

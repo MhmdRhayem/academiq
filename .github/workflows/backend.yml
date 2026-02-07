@@ -3,6 +3,9 @@ name: Backend - Build, Push, Deploy
 on:
   push:
     branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
 
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/academiq

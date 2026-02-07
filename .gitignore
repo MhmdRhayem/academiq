@@ -65,3 +65,10 @@ htmlcov/
 *.docx
 *.xlsx
 .claude/
+
+# Frontend (Node.js / React)
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/package-lock.json
+frontend/.env

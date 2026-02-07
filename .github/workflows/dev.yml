@@ -21,10 +21,10 @@ jobs:
           pip install flake8 black
 
       - name: Run Black
-        run: black --check app/ tests/
+        run: black --check backend/app/ backend/tests/
 
       - name: Run Flake8
-        run: flake8 app/ tests/ --max-line-length=120
+        run: flake8 backend/app/ backend/tests/ --max-line-length=120
 
   test:
     runs-on: ubuntu-latest
@@ -40,13 +40,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
 
       - name: Run unit tests
-        run: pytest tests/test_unit.py -v
+        run: pytest backend/tests/test_unit.py -v
 
       - name: Run integration tests
-        run: pytest tests/test_integration.py -v
+        run: pytest backend/tests/test_integration.py -v
 
       - name: Run e2e tests
-        run: pytest tests/test_e2e.py -v
+        run: pytest backend/tests/test_e2e.py -v

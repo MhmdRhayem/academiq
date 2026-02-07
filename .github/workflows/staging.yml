@@ -2,7 +2,7 @@ name: Staging - Build and Test
 
 on:
   push:
-    branches: [dev]
+    branches: [staging]
 
 jobs:
   test:
@@ -46,3 +46,14 @@ jobs:
           tags: grade-predictor:staging
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  push-to-main:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to main branch
+        run: git push origin HEAD:main

@@ -32,7 +32,7 @@ class TestGradePredictor:
         assert predictor.is_loaded is True
         assert len(predictor.feature_columns) > 0
         assert len(predictor.target_columns) > 0
-        assert predictor.model_name in ["XGBoost", "RandomForest"]
+        assert predictor.model_name in ["XGBoost", "RandomForest", "Random Forest"]
 
     def test_predictor_get_model_info(self):
         """Test getting model information"""

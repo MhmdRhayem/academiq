@@ -2,3 +2,5 @@
     remote = origin
 ['remote "origin"']
     url = https://dagshub.com/MhmdRhayem/academiq.dvc
+['remote "s3"']
+    url = s3://academiq-dvc-data/dvc-storage

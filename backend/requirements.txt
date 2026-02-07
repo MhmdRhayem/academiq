@@ -11,8 +11,9 @@ pandas==2.1.4
 joblib==1.3.2
 openpyxl==3.1.2
 
-# MLFlow
+# MLFlow (optional - for loading models from MLflow Model Registry)
 mlflow==2.10.0
+python-dotenv==1.0.0
 
 # DVC
 dvc==3.38.1

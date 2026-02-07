@@ -69,10 +69,14 @@ jobs:
         run: |
           export PATH="$HOME/.koyeb/bin:$PATH"
 
-          # Try to redeploy existing service, or create new one
+          # Try to redeploy existing service, or create new one with MLflow env vars
           koyeb service redeploy academiq/academiq 2>/dev/null || \
           koyeb app init academiq \
             --docker "${{ env.DOCKER_IMAGE }}:latest" \
             --ports 8000:http \
             --routes /:8000 \
-            --instance-type free
+            --instance-type free \
+            --env MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI }} \
+            --env MLFLOW_TRACKING_USERNAME=${{ secrets.MLFLOW_TRACKING_USERNAME }} \
+            --env MLFLOW_TRACKING_PASSWORD=${{ secrets.MLFLOW_TRACKING_PASSWORD }} \
+            --env MLFLOW_MODEL_NAME=grade-predictor

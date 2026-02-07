@@ -66,7 +66,7 @@ class GradePredictor:
 
         result = {}
         for i, course in enumerate(self.target_columns):
-            result[course] = round(float(predictions[i]), 2)
+            result[course] = round(float(np.clip(predictions[i], 0, 100)), 2)
 
         return result, self.model_name
 

@@ -1,5 +1,5 @@
 {
-  "best_model": "XGBoost",
+  "best_model": "Random Forest",
   "random_forest": {
     "params": {
       "max_depth": 15,
@@ -9,21 +9,21 @@
     },
     "filename": "rf_n200_d15_split5_leaf1.pkl",
     "rmse": 12.354812947823282,
-    "r2": 0.10711796696439535,
-    "cv_r2": 0.08765021752141977
+    "r2": 0.1071179669643953,
+    "cv_r2": 0.08765021752141981
   },
   "xgboost": {
     "params": {
       "subsample": 0.7,
-      "n_estimators": 200,
+      "n_estimators": 100,
       "max_depth": 10,
-      "learning_rate": 0.01,
+      "learning_rate": 0.05,
       "colsample_bytree": 0.7
     },
-    "filename": "xgb_n200_d10_lr0.01_sub0.7_col0.7.pkl",
-    "rmse": 12.325550888780349,
-    "r2": 0.11021435260772705,
-    "cv_r2": 0.07343645393848419
+    "filename": "xgb_n100_d10_lr0.05_sub0.7_col0.7.pkl",
+    "rmse": 12.507522150752422,
+    "r2": 0.08442631363868713,
+    "cv_r2": 0.035907661588862536
   },
   "input_courses": [
     "M1100",

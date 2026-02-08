@@ -1,0 +1,5 @@
+outs:
+- md5: 4a1d35da2319b2b077f5161bc4654671
+  size: 659341
+  hash: md5
+  path: encoded_data_info.xlsx

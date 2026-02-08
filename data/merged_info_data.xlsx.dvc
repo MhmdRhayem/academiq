@@ -1,0 +1,5 @@
+outs:
+- md5: 34561d9f251b0e8c0ce61284192e0750
+  size: 665921
+  hash: md5
+  path: merged_info_data.xlsx
